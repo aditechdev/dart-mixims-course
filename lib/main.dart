@@ -1,22 +1,34 @@
 import 'package:flutter/material.dart';
 import 'dart:developer' as devtools show log;
 
+import 'package:flutter/semantics.dart';
+
 extension Log on Object {
   void log() => devtools.log(toString());
 }
 
-mixin canRun {
+abstract class Animal {
+  const Animal();
+}
+
+mixin CanRun on Animal{
   int get speed;
   void run() {
     "Running at a speed of $speed".log();
   }
 }
 
-class Cat with canRun {
+class Cat extends Animal with CanRun {
   @override
   // TODO: implement speed
   // int get speed => throw UnimplementedError();
   int speed = 10;
+}
+
+class Dog with CanRun {
+  @override
+  // TODO: implement speed
+  int get speed => throw UnimplementedError();
 }
 
 void testIt() {
