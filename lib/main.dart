@@ -54,7 +54,7 @@ class Home extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: Text(
-          "START CODING\n\n</>",
+          "<  START CODING / >",
           style: TextStyle(
             fontSize: 20,
             color: Colors.blue,
